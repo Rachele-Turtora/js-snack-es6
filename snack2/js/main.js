@@ -27,15 +27,15 @@ function generateInt(min, max){
 }
 
 // Modifying array
-teams.forEach((element => {
+teams.forEach((element) => {
     element.points = generateInt(0, 90);
     element.fouls = generateInt(0, 20);
-}))
+})
 
 // Printing new array
 const myTeams = teams.map((element) => {
     return {
-        nome: element.name,
+        name: element.name,
         fouls: element.fouls
     }
 });
