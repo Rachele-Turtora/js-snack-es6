@@ -16,21 +16,34 @@ const bikes = [
     {
         name: "Kootu",
         weight: 40
+    },
+    {
+        name: "Galano",
+        weight: 5
     }
 ]
 
-let weight = bikes[0].weight; 
-let bike;
+if (bikes.length){
+    let weight = bikes[0].weight; 
 
-// Comparing bikes
-bikes.forEach((element) => {
+    // Comparing bikes
+    bikes.forEach((element) => {
 
-    if (element.weight < weight){
-            weight = element.weight;
-            bike = element;
-    }
-})
+        const currentWeight = element.weight
 
-// Printing result
-console.log(`La bici più leggera è: ${bike.name}, che pesa ${bike.weight}`);
+        if (currentWeight < weight){
+                weight = currentWeight;
+        }
+    })
 
+    const biciLeggere = bikes.filter((element) => element.weight === weight)
+
+    // Printing result
+    console.log("Le bici più leggere sono:")
+    biciLeggere.forEach((element) => {
+        console.log(`${element.name}, che pesa ${element.weight}`);
+    })
+
+} else {
+    console.log("Non ci sono bici in elenco.")
+}
